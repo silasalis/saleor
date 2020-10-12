@@ -13,7 +13,7 @@ COPY pyproject.toml /app/
 WORKDIR /app
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
-RUN poetry install --no-ansi
+RUN poetry install --no-root --no-dev
 
 ### Final image
 FROM python:3.8-slim
